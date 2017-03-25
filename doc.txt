@@ -1,0 +1,5 @@
+https://hackernoon.com/how-to-control-a-fan-to-cool-the-cpu-of-your-raspberrypi-3313b6e7f92c#.y066fbomi fan speed
+http://raspberrypi.stackexchange.com/questions/7133/how-to-change-pi-sudo-permissions -PERM FILE check size if elif replace
+http://stackoverflow.com/questions/7744226/how-can-i-detect-changes-to-a-text-file-during-the-execution-of-a-python-script update change size check if git clone
+http://www.ridgesolutions.ie/index.php/2013/02/22/raspberry-pi-restart-shutdown-your-pi-from-python-code/ shutdown, restart
+http://dordnung.de/raspberrypi-ledstrip/ brightness  https://github.com/dordnung/raspberrypi-ledstrip/blob/master/fading.py

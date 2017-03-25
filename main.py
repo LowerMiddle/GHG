@@ -66,13 +66,13 @@ HumidityLabel.place(relx=.5, rely=.3, anchor="c")
 
 ####GET VERSION###
 def update():
-    REVISION = 01;
+    REVISION = 1;
     revision = get_revision()
     if revision == -1:
         tkMessageBox.showwarning("No internet connection!", "Please check your internet connection!")
     elif revision > REVISION:
         try:
-            sock = urllib.urlopen('https://github.com/LowerMiddle/GHG/main.py')
+            sock = urllib.urlopen('https://github.com/LowerMiddle/GHG/blob/master/main.py')
             page = sock.read()
         except IOError:
             page = ''
@@ -98,7 +98,6 @@ def update():
         returncode = call(['chmod', '+x', 'update_ghg.sh'])
         if returncode != 0:
             tkMessageBox.showwarning("Error!", "Error!")
-
         returncode = call(['sh', 'update_ghg.sh'])
         if returncode != 0:
             tkMessageBox.showwarning("Error!", "Error!")
@@ -110,7 +109,7 @@ def update():
 def get_revision():
     irev = -1
     try:
-        sock = urllib.urlopen('https://github.com/LowerMiddle/GHG/main.py')
+        sock = urllib.urlopen('https://github.com/LowerMiddle/GHG/blob/master/main.py')
         page = sock.read()
     except IOError:
         return (-1, '', '')
@@ -124,7 +123,6 @@ def get_revision():
             irev = int(rev)
         except ValueError:
             rev = rev.split('\n')[0]
-            print R + '[+] invalid revision number: "' + rev + '"'
 
     return irev
 
@@ -241,11 +239,11 @@ def datetick():
         if today2 != today:
             today = today2
             DateLabel.config(text="Date: %s" % today2)
-        DateLabel.after(200, tick)
+        DateLabel.after(200, datetick)
     except:
         DateLabel.config(text="Date: There is some type of error")
         
-    
+
 ##############
 
 
@@ -318,3 +316,4 @@ read_temp()
 datetick()
 tick()
 mainloop()
+
